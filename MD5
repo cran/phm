@@ -1,0 +1,12 @@
+491f5e5a87d699b61835ac446e78ea56 *DESCRIPTION
+da7702c00263d3f12e4fe8348f800d6e *NAMESPACE
+ef1c1a336a84d53099bfde4b57c32e45 *R/as.matrix.phraseDoc.R
+14225d8a90a91459e1026793052d4b01 *R/freqPhrases.R
+cc1a9e75bac36e7488437ba75c6469fd *R/getDocs.R
+2cf9a6a2cbfaaf7711dfdfceaac3a0da *R/phraseDoc.R
+c0e0be2bd3107fbf883ac8b49fb90129 *R/removePhrases.R
+2cdaff64944dd0bc3be7ea5e08a389f7 *man/as.matrix.phraseDoc.Rd
+c32721d165e39f1e2e7ec0dd4988f1b5 *man/freqPhrases.Rd
+c30b8f35a7b78d3ccf53f11d4ab7ff13 *man/getDocs.Rd
+3ccd261def2bc11da28c6cf2ee3f2ab8 *man/phraseDoc.Rd
+e66d4c89bbd0a518db7e43df27d4593b *man/removePhrases.Rd
