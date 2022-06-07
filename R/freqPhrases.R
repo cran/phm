@@ -19,11 +19,12 @@
 #' @export
 ################################################################################
 freqPhrases=function(pd,n=10) {
-  #Error checking of the input arguments
-  if (class(pd)!="phraseDoc") stop("pd must be a phraseDoc")
-  if (class(n)!="numeric"&&class(n)!="integer") stop("n must be numeric")
+  if (!inherits(pd,"phraseDoc")) stop("pd must be a phraseDoc")
+  if (!isInt(n)||n<1) stop("n must be an integer greater than or equal to 1")
   n=min(n,length(pd$phrases$freq))
-  x=utils::tail(pd$phrases$freq[order(pd$phrases$freq)],n)
-  names(x)=utils::tail(pd$phrases$phrase[order(pd$phrases$freq)],n)
-  rev(x)
+  x=tail(pd$phrases$freq[order(pd$phrases$freq)],n)
+  names(x)=tail(pd$phrases$phrase[order(pd$phrases$freq)],n)
+  m=as.matrix(rev(x))
+  colnames(m)="frequency"
+  m
 }

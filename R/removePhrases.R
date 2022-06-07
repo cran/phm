@@ -15,22 +15,26 @@
 #'       "This boy will test text that man")
 #' pd=phraseDoc(tst)
 #' removePhrases(pd, c("test text","another test text"))
+#' @import data.table
 #' @export
 ################################################################################
 removePhrases=function(pd,phrs) {
   #Error checking of the input arguments
-  if (class(pd)!="phraseDoc") stop("pd must be a phraseDoc")
-  if (class(phrs)!="character") stop("phrs must be character")
+  if (!inherits(pd,"phraseDoc")) stop("pd must be a phraseDoc")
+  if (!inherits(phrs,"character")) stop("phrs must be a character vector")
   phrs=trimws(phrs)
   qppos=data.table(doc=pd$doc,block=pd$block,pos=pd$pos,
-                 phrase=pd$phrases$phrase[pd$phrase],pwrds=pd$phrases$pwrds[pd$phrase])
+                 phrase=pd$phrases$phrase[pd$phrase],
+                 pwrds=pd$phrases$pwrds[pd$phrase])
   idx=which(qppos$phrase %in% phrs)
   if (length(idx)==0) return(pd)
   qppos=qppos[-idx]
   qppos$phrase=factor(qppos$phrase)
   phr=qppos[,.N,by=c("phrase","pwrds")]
-  x=list(phrase=as.integer(qppos$phrase),doc=qppos$doc,block=qppos$block,pos=qppos$pos,
-         phrases=list(phrase=phr$phrase,pwrds=phr$pwrds,freq=phr$N))
+  x=list(phrase=as.integer(qppos$phrase),doc=qppos$doc,
+         block=qppos$block,pos=qppos$pos,
+         phrases=list(phrase=phr$phrase,pwrds=phr$pwrds,freq=phr$N),
+         docs=pd$docs)
   class(x)="phraseDoc"
   x
 }

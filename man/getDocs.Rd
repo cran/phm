@@ -4,12 +4,15 @@
 \alias{getDocs}
 \title{Display Frequency Matrix for Phrases}
 \usage{
-getDocs(pd, phrs)
+getDocs(pd, phrs, ids = TRUE)
 }
 \arguments{
 \item{pd}{A phraseDoc object.}
 
 \item{phrs}{A set of phrases.}
+
+\item{ids}{A logical value with TRUE (default) to return ids (if available), 
+FALSE to return indices.}
 }
 \value{
 A matrix with the documents and # of occurrences for the phrases in

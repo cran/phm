@@ -5,23 +5,24 @@
 \title{phraseDoc Creation}
 \usage{
 phraseDoc(
-  txts,
+  co,
   mn = 2,
   mx = 8,
   ssw = stopStartWords(),
   sew = stopEndWords(),
   sp = stopPhrases(),
   min.freq = 2,
-  pp = function(phrase, freq) {     ifelse(freq < min.freq, return(FALSE),
-    return(TRUE)) },
+  principal = function(phrase, freq) {
+     freq >= min.freq
+ },
   max.phrases = 1500,
   shiny = FALSE,
   silent = FALSE
 )
 }
 \arguments{
-\item{txts}{A character vector with each element the contents of a document,
-or a VCorpus object.}
+\item{co}{A corpus or a character vector with each element the text of a 
+document.}
 
 \item{mn}{Minimum number of words in a phrase.}
 
@@ -35,18 +36,21 @@ or a VCorpus object.}
 
 \item{min.freq}{The minimum frequency of phrases to be included.}
 
-\item{pp}{Function that determines if a phrase is a principal phrase. By
-default, FALSE is returned if the phrase occurs less often than the number
+\item{principal}{Function that determines if a phrase is a principal phrase. 
+By default, FALSE is returned if the phrase occurs less often than the number
 in \code{min.freq}.}
 
 \item{max.phrases}{Maximum number of phrases to be included.}
 
-\item{shiny}{TRUE if called from a shiny program.}
+\item{shiny}{TRUE if called from a shiny program. This will allow progress
+to be recorded on a progress meter; the function uses about 100 progress
+steps, so it should be created inside a withProgress function with the 
+argument max set to at least 100.}
 
 \item{silent}{TRUE if you do not want progress messages.}
 }
 \value{
-object of class phraseDoc.
+Object of class phraseDoc
 }
 \description{
 Create an object of class phraseDoc. This will hold all principal phrases of
@@ -60,5 +64,5 @@ tst=c("This is a test text",
       "This is another test text 2",
       "This girl will test text that man",
       "This boy will test text that man")
-pd=phraseDoc(tst)
+phraseDoc(tst)
 }
