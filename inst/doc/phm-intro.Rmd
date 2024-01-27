@@ -36,7 +36,7 @@ Once the phraseDoc object has been created, there are several functions availabl
 
 * `freqPhrases` will display its most frequent phrases
 * `getDocs` will display all its documents that have nonzero frequencies for phrases that appear in a vector of phrases
-* `getPhrases` will display all phrases occurring in documents that appear in avector of document IDs or document indices
+* `getPhrases` will display all phrases occurring in documents that appear in a vector of document IDs or document indices
 * `removePhrases` will return the phraseDoc object with a set of phrases removed
 
 As an example, we create the following vector with texts:
@@ -73,6 +73,9 @@ Remove the phrase "test text" from the phrase document:
 pd=removePhrases(pd, "test text")
 as.matrix(pd)
 ```
+
+Note that `removePhrases` will remove a phrase from the phrase document, but it is not able to restore the frequencies of the phrases inside the removed phrases. If this is desired, the phrases should be removed when creating the phrase document using the argument `sp` instead.
+
 ## 2. Text Clustering
 
 The phm package also provides a distance measure that is optimal for text. Text distance is calculated as the proportion of unmatched frequencies, i.e., the number of unmatched frequencies divided by the total frequencies among the two vectors. Text clustering functions can be used for term-document matrices with phrases, as well as for regular term-document matrices where the terms are words (usually obtained via functions in the tm package).
@@ -115,7 +118,7 @@ Then we cluster it into 3 clusters:
 ```{r}
 (tc=textCluster(M,3))
 ```
-We can look a the output of the function:
+We can look at the output of the function:
 ```{r}
 #This shows for each document what cluster it is in
 tc$cluster
