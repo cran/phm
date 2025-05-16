@@ -49,7 +49,7 @@ overflow: visible;
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -60,7 +60,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
 { counter-reset: source-line 0; }
@@ -344,8 +344,12 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <div id="phrase-mining" class="section level2">
 <h2>1. Phrase Mining</h2>
 <p>This vignette will introduce you to phrase mining using the phm
-package. Those who are familiar with the tm package will recognize that
-there are similarities in functionality between the two.</p>
+package. The package is based on: Small, E., &amp; Cabrera, J. (2025).
+Principal phrase mining: an automated method for extracting meaningful
+phrases from text. International Journal of Computers and Applications,
+47(1), 84–92, <a href="https://doi.org/10.1080/1206212X.2024.2448494" class="uri">https://doi.org/10.1080/1206212X.2024.2448494</a>.</p>
+<p>Those who are familiar with the tm package will recognize that there
+are similarities in functionality between the two.</p>
 <p>Phrase Mining is done on a corpus with texts, or on a vector where
 each element is a text, via the function <code>phraseDoc</code>. This
 function will create a phraseDoc object, which is equivalent to a
@@ -398,10 +402,10 @@ set of phrases removed</li>
 <span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>      <span class="st">&quot;This boy will test text that man&quot;</span>)</span></code></pre></div>
 <p>Create the phraseDoc object on it:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>pd<span class="ot">=</span><span class="fu">phraseDoc</span>(tst)</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co">#&gt; [1] &quot;2024-01-26 17:23:49 EST&quot;</span></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt; [1] &quot;2024-01-26 17:23:49 EST&quot;</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co">#&gt; [1] &quot;2025-05-15 23:41:10 EDT&quot;</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt; [1] &quot;2025-05-15 23:41:10 EDT&quot;</span></span>
 <span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt; [1] &quot;Rectifying frequencies...&quot;</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt; [1] &quot;2024-01-26 17:23:49 EST&quot;</span></span></code></pre></div>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt; [1] &quot;2025-05-15 23:41:10 EDT&quot;</span></span></code></pre></div>
 <p>Display the term-document matrix:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">as.matrix</span>(pd)</span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co">#&gt;                          docs</span></span>
@@ -595,7 +599,7 @@ tm package:</p>
 <span id="cb16-15"><a href="#cb16-15" tabindex="-1"></a><span class="co">#The meta data of one of the documents; all variables are present.</span></span>
 <span id="cb16-16"><a href="#cb16-16" tabindex="-1"></a>co[[<span class="dv">1</span>]]<span class="sc">$</span>meta</span>
 <span id="cb16-17"><a href="#cb16-17" tabindex="-1"></a><span class="co">#&gt;   author       : Smith</span></span>
-<span id="cb16-18"><a href="#cb16-18" tabindex="-1"></a><span class="co">#&gt;   datetimestamp: 2024-01-26 22:23:49.3588500022888</span></span>
+<span id="cb16-18"><a href="#cb16-18" tabindex="-1"></a><span class="co">#&gt;   datetimestamp: 2025-05-16 03:41:10.7632060050964</span></span>
 <span id="cb16-19"><a href="#cb16-19" tabindex="-1"></a><span class="co">#&gt;   description  : character(0)</span></span>
 <span id="cb16-20"><a href="#cb16-20" tabindex="-1"></a><span class="co">#&gt;   heading      : character(0)</span></span>
 <span id="cb16-21"><a href="#cb16-21" tabindex="-1"></a><span class="co">#&gt;   id           : A</span></span>

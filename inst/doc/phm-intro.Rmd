@@ -18,7 +18,10 @@ library(phm)
 ```
 ## 1. Phrase Mining
 
-This vignette will introduce you to phrase mining using the phm package. Those who are familiar with the tm package will recognize that there are similarities in functionality between the two.
+This vignette will introduce you to phrase mining using the phm package. The package is based on: Small, E., & 
+Cabrera, J. (2025). Principal phrase mining: an automated method for extracting meaningful phrases from text. International Journal of Computers and Applications, 47(1), 84–92, https://doi.org/10.1080/1206212X.2024.2448494. 
+
+Those who are familiar with the tm package will recognize that there are similarities in functionality between the two.
 
 Phrase Mining is done on a corpus with texts, or on a vector where each element is a text, via the function `phraseDoc`. This function will create a phraseDoc object, which is equivalent to a term-document matrix stored in a more efficient manner. To see the term-document matrix, use the function `as.matrix` on its output.
 

@@ -1,4 +1,4 @@
-21d286342ee386dddc255edf0cd0f1e1 *DESCRIPTION
+7efca24ef6aa4bebfb6b8a4107d34f67 *DESCRIPTION
 4c03802dce5ebcf7710446eac8494198 *NAMESPACE
 5d98358267bf13326aba325df9264e2d *R/DFSource.R
 8ac2cc9d1d60ca03d38d9322e7c4c2cf *R/bestDocs.R
@@ -9,10 +9,12 @@ dbd372dd3e0f14dd68f42540f492238d *R/freqPhrases.R
 77d1dff526da02c5a1b9118f0a957cb8 *R/getPubMed.R
 08942d04308282a4a6c51468831d5a2c *R/phraseDoc.R
 6f0abfae3773dbf8b2e51275a2f713cb *R/removePhrases.R
-b090e7a1adb9989ecfddd162c8141ad1 *build/vignette.rds
+cbff0298a48aee5a6f33878fc81a24d9 *build/vignette.rds
+0a5238c70ca5f88dcac340afe2bfd05c *inst/CITATION
 5371e44c0d444718ab08556641bd1ddd *inst/doc/phm-intro.R
-fc98bba8bc7db637fc27b8a8e2dfd795 *inst/doc/phm-intro.Rmd
-4d60be5554bc6c2e65e75fb2d97c47cc *inst/doc/phm-intro.html
+a1b9a15d553a9e53df39767d59e35b6f *inst/doc/phm-intro.Rmd
+e82213e39ad8fd98d91c1b063bd94625 *inst/doc/phm-intro.html
+5e3d8217dbdaede51aeda80f23bfca94 *inst/references.bib
 4f700ea07d49a5e020e7588d0f4c2b2c *man/DFSource.Rd
 e646f5c6d17f10274f501ffe4afa97ba *man/as.matrix.phraseDoc.Rd
 38c33e7824c641781d70f7c4e3bd0f54 *man/bestDocs.Rd
@@ -23,7 +25,6 @@ c32721d165e39f1e2e7ec0dd4988f1b5 *man/freqPhrases.Rd
 b21b8e92f363f40f9717236baba91a7c *man/getElem.DFSource.Rd
 f2d0039f6556c5f510de2096834af146 *man/getPhrases.Rd
 31c69e8fbd3ca828f7dfc0dbdb72fec9 *man/getPubMed.Rd
-8d1469419b697b6fc972a0d923d7850e *man/phm-package.Rd
 9b89a2dfa3eed7dd0b6891e80db7aa63 *man/phraseDoc.Rd
 25bf3c9a25f6f30b44f6532e6dcffd39 *man/print.phraseDoc.Rd
 52c7e5a4237f8c034bd918fd55ba90f4 *man/print.textCluster.Rd
@@ -36,4 +37,4 @@ f5b69dcaf5a107a74957b02d8053bca4 *man/stopStartWords.Rd
 709f4bb9e08f24b94182dc30b25c5820 *man/textCluster.Rd
 1ff2f342dcd9da1b4602a30bcce443ee *man/textDist.Rd
 a1646dabee84c9248d884e9b0eb03862 *man/textDistMatrix.Rd
-fc98bba8bc7db637fc27b8a8e2dfd795 *vignettes/phm-intro.Rmd
+a1b9a15d553a9e53df39767d59e35b6f *vignettes/phm-intro.Rmd
